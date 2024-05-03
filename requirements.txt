@@ -2,3 +2,7 @@ asgiref==3.7.2
 Django==4.2.1
 sqlparse==0.4.4
 tzdata==2023.4
+psycopg[binary]
+django-crispy-forms==1.13
+crispy-bootstrap5==0.7
+django-allauth==0.61.1

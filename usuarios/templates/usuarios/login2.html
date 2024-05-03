@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+
+{% block contenido %}
+
+{% include "fragments/titulo.html" with titulo="Login 2"  %}
+
+
+<div class="card border-success mb-3" style="max-width: 20rem;" bis_skin_checked="1">
+  <div class="card-header" bis_skin_checked="1">Bienvenido</div>
+  <div class="card-body" bis_skin_checked="1">
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Login</button>
+    </form>
+    {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

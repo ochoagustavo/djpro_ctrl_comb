@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<form action="" method="post">
+    {% csrf_token %}
+{% include 'fragments/titulo.html' with titulo="Borrar" %}
+
+<div class="card border-success mb-3" style="max-width: 80%;" bis_skin_checked="1">
+    <div class="card-header" bis_skin_checked="1">Borrar</div>
+    <div class="card-body" bis_skin_checked="1">
+        Eliminar {{obj}}?
+        <button type="submit" class="btn btn-danger far fa-question-circle">Borrar</button>
+        <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-success">
+            <span class="fa fa-undo"></span>
+        Cancelar</a>
+    </div>
+</div>
+
+</form>
+{% endblock %}

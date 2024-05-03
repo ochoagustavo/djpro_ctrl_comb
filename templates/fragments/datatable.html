@@ -1,0 +1,32 @@
+{% load static %}
+
+<script>
+    var tbl;
+$(function(){
+    tbl=$("#tbl").DataTable({
+        language: {
+        url: "{% static 'plugins/datatable/es.json' %}"
+        },
+        ajax:{
+            url: "{% url 'control:modelo_dt' %}",
+            dataSrc: "datos"
+        },
+        columns: [
+            { data: "mark"},
+            { data: "descript"},
+            { data: null,
+                className:"dt-center editor-edit text-success",
+                defaultContent: '<i class="bi bi-pencil"></i>',
+                orderable:false
+            },
+            { data: null,
+                className:"dt-center editor-edit text-success",
+                defaultContent: '<i class="bi bi-trash"></i>',
+                orderable:false
+            },
+        ],
+        dom: 'Bfrtip',
+        processing:true,serverSide:true,pageLength:15,
+    })
+})
+</script>
